@@ -1,15 +1,20 @@
 import React from "react";
 import "./App.css";
 
+import NavBar from "./components/layout/NavBar";
+
+import FetchData from "./components/Cards/FetchData";
+
 function App() {
   return (
     <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun 🚀!
-      </p>
+    <NavBar/>
+    <FetchData/>
+      
     </div>
   );
 }
 
 export default App;
+
+
