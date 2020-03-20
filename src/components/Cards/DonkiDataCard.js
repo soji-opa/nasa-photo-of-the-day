@@ -10,7 +10,7 @@ import {
 } from "reactstrap";
 import { Player } from 'video-react';
 
-const FetchDataCard = ({
+const DonkiDataCard = ({
   mediaSource,
   title,
   copyright,
@@ -46,7 +46,7 @@ const FetchDataCard = ({
   );
 };
 
-export default FetchDataCard;
+export default DonkiDataCard;
 
 // const FetchDataCard = ({imgUrl, right, date, description})=>{
 //     return(

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import FetchDataCard from "./FetchDataCard";
+import DonkiDataCard from "./DonkiDataCard";
 import { Container, Row } from 'reactstrap';
 
-function FetchData() {
+function DonkiData() {
   const [data, setData] = useState({});
 
   const [requestedDate, setRequestedDate] = useState("");
@@ -20,7 +20,7 @@ function FetchData() {
         `https://api.nasa.gov/planetary/apod?api_key=6zJ3shxdlDhYcyemR9JSStgFlU31KXZy4NM5MZRf&date=${requestedDate}`
       )
       .then(response => {
-        console.log("response from the api", response);
+        console.log("response from the DONKI", response);
         setData(response.data);
         setMedia(response.data.url);
         setLoading(false);
@@ -28,7 +28,7 @@ function FetchData() {
       .catch(error => setLoading(false));
   };
 
-  useEffect(effectCallbackFn, [requestedDate]);
+  useEffect(effectCallbackFn, []);
 
 
   const onDateChange = (e)=>{
@@ -48,7 +48,7 @@ function FetchData() {
   return (
     <Container className= "mb-5">
       <Row>
-      {loading ? <h3>Still Loading...</h3>: <FetchDataCard
+      {loading ? <h3>Still Loading...</h3>: <DonkiDataCard
         
         picHandler ={picHandler}
         mediaSource={media}
@@ -66,4 +66,4 @@ function FetchData() {
   );
 }
 
-export default FetchData;
+export default DonkiData;
